@@ -1,0 +1,18 @@
+# policy.csv
+# This defines the actual permissions
+
+# Format: p, role, resource, action
+p, admin, /admin/dashboard, GET
+p, admin, /admin/dashboard, POST
+p, admin, /admin/users, GET
+p, admin, /admin/users, POST
+p, admin, /admin/posts, GET
+p, admin, /admin/posts, POST
+p, editor, /admin/dashboard, GET
+p, editor, /admin/posts, *
+
+# Format: g, user, role (user inherits role's permissions)
+g, alice, admin
+g, bob, editor
+g, charlie, guest
+g, guts, admin
